@@ -1,0 +1,23 @@
+<h2>Alunos</h2>
+<div class="table-responsive small">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col">CPF</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Instituição</th>
+        <th scope="col">Disciplina</th>
+        <th scope="col">Nota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{student.student.cpf}}</td>
+        <td>{{student.student.name}}</td>
+        <td>{{student.school.name}}</td>
+        <td>{{student.fos}}</td>
+        <td>{{student.grades.grades}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
