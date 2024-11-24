@@ -34,11 +34,11 @@
         <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Home"><use xlink:href="#home"/></svg>
       </a>
     </li>
-    <li>
+    <!-- <li>
       <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  class="nav-link py-3 border-bottom rounded-0" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right">
         <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Dashboard"><use xlink:href="#speedometer2"/></svg>
       </a>
-    </li>
+    </li> -->
     <li>
       <a [routerLink]="['/grades']" routerLinkActive="router-link-active"  class="nav-link py-3 border-bottom rounded-0" title="Students Table" data-bs-toggle="tooltip" data-bs-placement="right">
         <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Students Table"><use xlink:href="#table"/></svg>
@@ -64,7 +64,7 @@
       <li><a class="dropdown-item" href="#">Settings</a></li>
       <li><a class="dropdown-item" href="#">Profile</a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Sign out</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/login']" routerLinkActive="router-link-active" >Sign out</a></li>
     </ul>
   </div>
 </div>
