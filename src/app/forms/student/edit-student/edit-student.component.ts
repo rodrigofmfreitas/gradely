@@ -1,12 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Student } from '../../../interfaces/student';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { StudentService } from '../../../services/student/student.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-student',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, RouterLink],
   templateUrl: './edit-student.component.html',
   styleUrl: './edit-student.component.css'
 })
-export class EditStudentComponent {
+export class EditStudentComponent implements OnInit {
+  protected student?: Student
+  constructor(private route: ActivatedRoute, private studentService: StudentService) { }
 
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id')
+    const students = this.studentService.getStudents()
+    this.student = students.find(student => student.id === id)
+  }
+
+  editStudent() {
+    this.studentService.editStudent(this.student!)
+  }
 }

@@ -38,4 +38,9 @@ export class SchoolService {
   getSchools() {
     return this.schools
   }
+
+  editSchool(school: School) {
+    const index = this.schools.findIndex(x => x.id === school.id)
+    this.schools[index] = school
+  }
 }

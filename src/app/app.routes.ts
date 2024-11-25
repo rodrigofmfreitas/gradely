@@ -10,6 +10,8 @@ import { MainComponent } from './main/main.component';
 import { AddSchoolComponent } from './forms/school/add-school/add-school.component';
 import { AddSchoolStudentComponent } from './forms/schoolStudent/add-school-student/add-school-student.component';
 import { SelectSchoolComponent } from './registrations/selectable/select-school/select-school.component';
+import { EditStudentComponent } from './forms/student/edit-student/edit-student.component';
+import { EditSchoolComponent } from './forms/school/edit-school/edit-school.component';
 
 export const routes: Routes = [
 
@@ -28,9 +30,11 @@ export const routes: Routes = [
     { path: 'student/add', component: AddStudentComponent },
     { path: 'school/add', component: AddSchoolComponent },
     { path: 'courses/add', component: AddSchoolStudentComponent },
-    { path: 'select/student', component: SelectStudentComponent },
-    { path: 'select/school', component: SelectSchoolComponent }
-  ]
+    { path: 'select/student', component: SelectStudentComponent  },
+    { path: 'select/student/:id', component: EditStudentComponent },
+    { path: 'select/school', component: SelectSchoolComponent },
+    { path: 'select/school/:id', component: EditSchoolComponent },
+    ]
   },
   { path: 'login', component: LoginComponent}
 ];

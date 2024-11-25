@@ -40,4 +40,9 @@ export class StudentService {
   getStudents() {
     return this.students
   }
+
+  editStudent(student: Student) {
+    const index = this.students.findIndex(x => x.id === student.id)
+    this.students[index] = student
+  }
 }
