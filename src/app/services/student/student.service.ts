@@ -45,4 +45,8 @@ export class StudentService {
     const index = this.students.findIndex(x => x.id === student.id)
     this.students[index] = student
   }
+
+  deleteStudent(student: Student) {
+    this.students = this.students.filter((x) => x.id !== student.id)
+  }
 }

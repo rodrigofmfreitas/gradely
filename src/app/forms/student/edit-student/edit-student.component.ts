@@ -24,4 +24,8 @@ export class EditStudentComponent implements OnInit {
   editStudent() {
     this.studentService.editStudent(this.student!)
   }
+
+  deleteStudent() {
+    this.studentService.deleteStudent(this.student!)
+  }
 }

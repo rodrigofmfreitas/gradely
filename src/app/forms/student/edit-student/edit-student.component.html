@@ -16,4 +16,6 @@
     <input class="form-control" id="dateOfBirth" type="date" [(ngModel)]="student!.dateOfBirth"  [ngModelOptions]="{standalone: true}">
   </div>
   <button type="submit" class="btn btn-primary btn-divider-gr" (click)="editStudent()" [routerLink]="['/registrations']" routerLinkActive="router-link-active" >Submit</button>
+  <button type="submit" class="btn btn-primary btn-divider-gr" (click)="deleteStudent()" [routerLink]="['/registrations']" routerLinkActive="router-link-active" >Delete</button>
+
 </form>

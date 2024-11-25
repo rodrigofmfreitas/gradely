@@ -26,4 +26,8 @@ export class EditSchoolComponent implements OnInit {
   editSchool() {
     this.schoolService.editSchool(this.school!)
   }
+
+  deleteSchool() {
+    this.schoolService.deleteSchool(this.school!)
+  }
 }

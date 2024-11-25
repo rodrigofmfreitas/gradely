@@ -43,4 +43,8 @@ export class SchoolService {
     const index = this.schools.findIndex(x => x.id === school.id)
     this.schools[index] = school
   }
+
+  deleteSchool(school: School) {
+    this.schools = this.schools.filter((x) => x.id !== school.id)
+  }
 }
