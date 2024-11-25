@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col">
+    <label for="school">Instituição de Ensino</label>
+    <select class="form-control form-control-lg" [(ngModel)]="schoolStudent.school">
+      <option *ngFor="let school of schools" [ngValue]="school">{{school.name}}</option>
+    </select>
+  </div>
+  <div class="col">
+    <label for="student">Aluno</label>
+    <select class="form-control form-control-lg" [(ngModel)]="schoolStudent.student">
+      <option *ngFor="let student of students" [ngValue]="student">{{student.name}}</option>
+    </select>
+  </div>
+</div>
+<div>
+  <label for="fos">Disciplina</label>
+  <input class="form-control" type="text" [(ngModel)]="schoolStudent.fos">
+</div>
+<button type="submit" class="btn btn-primary btn-divider-gr" (click)="addSchoolStudent()" [routerLink]="['/grades']" routerLinkActive="router-link-active" >Submit</button>
+

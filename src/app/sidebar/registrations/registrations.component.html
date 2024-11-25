@@ -3,7 +3,7 @@
     <h2>
       <ul>
         <li>
-          <a [routerLink]="['/studentForm']" routerLinkActive="router-link-active">Registrar Aluno</a>
+          <a [routerLink]="['/student/add']" routerLinkActive="router-link-active">Registrar Aluno</a>
         </li>
         <li>
           <a href="">Editar Registro de Aluno</a>
@@ -18,10 +18,10 @@
     <h2>
       <ul>
         <li>
-          <a [routerLink]="['/schoolForm']" routerLinkActive="router-link-active" >Registrar Escola</a>
+          <a [routerLink]="['/school/add']" routerLinkActive="router-link-active">Registrar Escola</a>
         </li>
         <li>
-          <a href="">Editar Registro de Escola</a>
+          <a [routerLink]="['/select/school']" routerLinkActive="router-link-active">Editar Registro de Escola</a>
         </li>
         <li>
           <a href="">Deletar Registro de Escola</a>
@@ -33,7 +33,7 @@
 <div class="row">
   <div class="d-flex justify-content-center">
     <h2>
-      <a href="">Registrar Aluno em Disciplina</a>
+      <a [routerLink]="['/courses/add']" routerLinkActive="router-link-active" >Registrar Aluno em Disciplina</a>
     </h2>
   </div>
 

@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { SchoolStudent } from '../../interfaces/school-student';
-import { Student } from '../../interfaces/student';
-import { School } from '../../interfaces/school';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SchoolStudentService {
   private schoolStudents: SchoolStudent[] = [{
+    id: Math.random().toString(),
     school: {
+      id: Math.random().toString(),
       cnpj: "123123123",
       name: "FUMEC",
       type: "Superior"
     },
     student: {
+      id: Math.floor(Math.random() * 1000000).toString(),
       cpf: "12312312312",
       name: "Vigas Velho",
       address: "Rua da Brisa, 420",
@@ -24,12 +25,15 @@ export class SchoolStudentService {
     },
     fos: "Front-End"
   }, {
+    id: Math.floor(Math.random() * 1000000).toString(),
     school: {
+      id: Math.floor(Math.random() * 1000000).toString(),
       cnpj: "123123123",
       name: "FUMEC",
       type: "Superior"
     },
     student: {
+      id: Math.floor(Math.random() * 1000000).toString(),
       cpf: "12312312312",
       name: "Vigas",
       address: "Rua da Brisa, 420",
@@ -43,29 +47,31 @@ export class SchoolStudentService {
 
   constructor() { }
 
-  createSchool() {
+  createEmptySchoolStudent() {
     return {
-      cnpj: "",
-      name: "",
-      type: ""
-    }
-  }
-
-  createStudent() {
-    return {
-      cpf: "",
-      name: "",
-      address: "",
-      dateOfBirth: new Date()}
-  }
-
-  createSchoolStudent(school: School, student: Student) {
-    return {
-      school: school,
-      student: student,
-      grades: [],
+      id: Math.floor(Math.random() * 1000000).toString(),
+      school: {
+        id: "",
+        cnpj: "",
+        name: "",
+        type: ""
+      },
+      student: {
+        id: "",
+        cpf: "",
+        name: "",
+        address: "",
+        dateOfBirth: new Date()
+      },
+      grades: {
+        grades: []
+      },
       fos: ""
     }
+  }
+
+  createSchoolStudent(schoolStudent: SchoolStudent) {
+    this.schoolStudents.push(schoolStudent)
   }
 
   getSchoolStudents() {

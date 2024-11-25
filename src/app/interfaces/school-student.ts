@@ -3,6 +3,7 @@ import { School } from "./school";
 import { Student } from "./student";
 
 export interface SchoolStudent{
+  id: string;
   school: School;
   student: Student;
   grades: Grades;
