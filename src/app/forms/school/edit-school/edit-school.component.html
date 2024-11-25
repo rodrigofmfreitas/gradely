@@ -1,24 +1,26 @@
-<form>
-  <div class="form-group">
-    <label for="school-name">Nome da Instituição</label>
-    <input class="form-control" type="text" id="school-name" placeholder="Nome" [(ngModel)]="school!.name" [ngModelOptions]="{standalone: true}">
-  </div>
-  <div class="form-group">
-    <label for="school-cnpj">CNPJ</label>
-    <input class="form-control" type="text" id="school-cnpj" placeholder="CNPJ" [(ngModel)]="school!.cnpj" [ngModelOptions]="{standalone: true}">
-  </div>
-  <div class="form-group">
-    <div>
-      <label for="school-type">Tipo</label>
-      <select class="form-control" type="text" name="school-type" id="school-type" [(ngModel)]="school!.type" [ngModelOptions]="{standalone: true}">
-        <option value="Fundamental">Fundamental</option>
-        <option value="Médio">Médio</option>
-        <option value="Graduação">Superior</option>
-        <option value="Tecnólogo">Tecnólogo</option>
-        <option value="Outros">Outros</option>
-      </select>
+<div class="form-margin-gradely">
+  <form>
+    <div class="form-group">
+      <label for="school-name">Nome da Instituição</label>
+      <input class="form-control" type="text" id="school-name" placeholder="Nome" [(ngModel)]="school!.name" [ngModelOptions]="{standalone: true}">
     </div>
-  </div>
-  <button type="submit" class="btn btn-primary btn-divider-gr" (click)="editSchool()" [routerLink]="['/registrations']" routerLinkActive="router-link-active" >Submit</button>
-  <button type="submit" class="btn btn-primary btn-divider-gr" (click)="deleteSchool()" [routerLink]="['/registrations']" routerLinkActive="router-link-active" >Delete</button>
-</form>
+    <div class="form-group">
+      <label for="school-cnpj">CNPJ</label>
+      <input class="form-control" type="text" id="school-cnpj" placeholder="CNPJ" [(ngModel)]="school!.cnpj" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+      <div>
+        <label for="school-type">Tipo</label>
+        <select class="form-control" type="text" name="school-type" id="school-type" [(ngModel)]="school!.type" [ngModelOptions]="{standalone: true}">
+          <option value="Fundamental">Fundamental</option>
+          <option value="Médio">Médio</option>
+          <option value="Graduação">Superior</option>
+          <option value="Tecnólogo">Tecnólogo</option>
+          <option value="Outros">Outros</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-divider-gr" (click)="editSchool()" [routerLink]="['/registrations']" routerLinkActive="router-link-active" >Submit</button>
+    <button type="submit" class="btn btn-primary btn-divider-gr" (click)="deleteSchool()" [routerLink]="['/registrations']" routerLinkActive="router-link-active" >Delete</button>
+  </form>
+</div>

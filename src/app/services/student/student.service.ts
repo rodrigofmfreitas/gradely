@@ -7,14 +7,14 @@ import { Student } from '../../interfaces/student';
 export class StudentService {
   private students: Student[] = [
     {
-      id: Math.random().toString(),
+      id: Math.floor(Math.random() * 1000000).toString(),
       cpf: "1",
       name: "Rodrigo",
       address: "Às Pampa",
       dateOfBirth: new Date()
     },
     {
-      id: Math.random().toString(),
+      id: Math.floor(Math.random() * 1000000).toString(),
       cpf: "2",
       name: "Tayla",
       address: "Aquele Lá",
