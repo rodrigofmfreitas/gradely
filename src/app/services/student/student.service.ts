@@ -7,15 +7,15 @@ import { Student } from '../../interfaces/student';
 export class StudentService {
   private students: Student[] = [
     {
-      id: Math.floor(Math.random() * 1000000).toString(),
-      cpf: "1",
+      id: Math.floor(Math.random() * 1000000000).toString(),
+      cpf: Math.floor(Math.random() * (100000000000 - 10000000000) + 10000000000).toString(),
       name: "Rodrigo",
       address: "Às Pampa",
       dateOfBirth: new Date()
     },
     {
-      id: Math.floor(Math.random() * 1000000).toString(),
-      cpf: "2",
+      id: Math.floor(Math.random() * 1000000000).toString(),
+      cpf: Math.floor(Math.random() * (100000000000 - 10000000000) + 10000000000).toString(),
       name: "Tayla",
       address: "Aquele Lá",
       dateOfBirth: new Date()
@@ -25,7 +25,7 @@ export class StudentService {
 
   createStudent() {
     return {
-      id: Math.floor(Math.random() * 1000000).toString(),
+      id: Math.floor(Math.random() * 1000000000).toString(),
       cpf: "",
       name: "",
       address: "",

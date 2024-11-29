@@ -1,55 +1,37 @@
+import { StudentService } from './../student/student.service';
+import { SchoolService } from './../school/school.service';
 import { Injectable } from '@angular/core';
 import { SchoolStudent } from '../../interfaces/school-student';
+import { Student } from '../../interfaces/student';
+import { School } from '../../interfaces/school';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SchoolStudentService {
   private schoolStudents: SchoolStudent[] = [{
-    id: Math.random().toString(),
-    school: {
-      id: Math.random().toString(),
-      cnpj: "123123123",
-      name: "FUMEC",
-      type: "Superior"
-    },
-    student: {
-      id: Math.floor(Math.random() * 1000000).toString(),
-      cpf: "12312312312",
-      name: "Vigas Velho",
-      address: "Rua da Brisa, 420",
-      dateOfBirth: new Date()
-    },
+    id: Math.floor(Math.random() * 1000000000).toString(),
+    school: this.schoolService.getSchools()[1],
+    student: this.studentService.getStudents()[0],
     grades: {
       grades: [40, 12, 21]
     },
     fos: "Front-End"
   }, {
-    id: Math.floor(Math.random() * 1000000).toString(),
-    school: {
-      id: Math.floor(Math.random() * 1000000).toString(),
-      cnpj: "123123123",
-      name: "FUMEC",
-      type: "Superior"
-    },
-    student: {
-      id: Math.floor(Math.random() * 1000000).toString(),
-      cpf: "12312312312",
-      name: "Vigas",
-      address: "Rua da Brisa, 420",
-      dateOfBirth: new Date()
-    },
+    id: Math.floor(Math.random() * 1000000000).toString(),
+    school: this.schoolService.getSchools()[0],
+    student: this.studentService.getStudents()[1],
     grades: {
       grades: [30, 32, 12]
     },
     fos: "Front-End"
   }]
 
-  constructor() { }
+  constructor(private schoolService: SchoolService, private studentService: StudentService) { }
 
   createEmptySchoolStudent() {
     return {
-      id: Math.floor(Math.random() * 1000000).toString(),
+      id: Math.floor(Math.random() * 1000000000).toString(),
       school: {
         id: "",
         cnpj: "",
@@ -91,5 +73,13 @@ export class SchoolStudentService {
       total = total + x
     }
     return total
+  }
+
+  deleteSchoolStudentByStudent(student: Student) {
+    this.schoolStudents = this.schoolStudents.filter((x) => x.student.id !== student.id)
+  }
+
+  deleteSchoolStudentBySchool(school: School) {
+    this.schoolStudents = this.schoolStudents.filter((x) => x.school.id !== school.id)
   }
 }

@@ -1,7 +1,8 @@
+import { SchoolStudentService } from './../../../services/school-student/school-student.service';
+import { StudentService } from './../../../services/student/student.service';
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../../../interfaces/student';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { StudentService } from '../../../services/student/student.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -13,7 +14,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class EditStudentComponent implements OnInit {
   protected student?: Student
-  constructor(private route: ActivatedRoute, private studentService: StudentService) { }
+  constructor(private route: ActivatedRoute,
+              private studentService: StudentService,
+              private schoolStudentService: SchoolStudentService) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
@@ -27,5 +30,6 @@ export class EditStudentComponent implements OnInit {
 
   deleteStudent() {
     this.studentService.deleteStudent(this.student!)
+    this.schoolStudentService.deleteSchoolStudentByStudent(this.student!)
   }
 }
