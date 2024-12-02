@@ -2,23 +2,29 @@ import { AdminService } from './../services/admin/admin.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterModule } from '@angular/router';
 import { Admin } from '../interfaces/admin';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink, RouterModule],
+  imports: [RouterLink, RouterModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit{
-  protected admin!: Admin
-  constructor(private route: ActivatedRoute, private adminService: AdminService) {}
+export class LoginComponent {
+  username: string = '';
+  password: string = '';
 
-  ngOnInit(): void {
-    this.admin = this.adminService.createAdmin()
-  }
-
-  isVerified() {
-    return this.adminService.isVerified(this.admin)
-  }
+  onLogin(): void {
+ if (this.username && this.password) {
+     console.log('Usuário:', this.username);
+     console.log('Senha:', this.password);
+     alert('Login realizado com sucesso!');
+   } else {
+     alert('Por favor, preencha todos os campos!');
+   }
+ }
 }

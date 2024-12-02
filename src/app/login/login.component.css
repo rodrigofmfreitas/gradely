@@ -1,25 +1,29 @@
-html,
-body {
-  height: 100%;
+.login-container {
+  height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ }
+
+ .login-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
 }
 
-.form-signin {
-  max-width: 330px;
-  padding: 1rem;
-}
+ .gradely-logo {
+  max-width: 150px;
+  height: auto;
+ }
 
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
+ .welcome-text {
+  font-size: 1.5rem;
+  color: #333;
+ }
 
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
+ .bg-image {
+  background-image: url("./img/livros.png");
+  height: 100vh;
+ }
