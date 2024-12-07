@@ -33,3 +33,4 @@ export class EditSchoolComponent implements OnInit {
     this.schoolStudentService.deleteSchoolStudentBySchool(this.school!)
   }
 }
+//teste
