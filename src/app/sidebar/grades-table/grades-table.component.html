@@ -7,16 +7,20 @@
         <th scope="col">Nome</th>
         <th scope="col">Instituição</th>
         <th scope="col">Disciplina</th>
-        <th scope="col">Nota</th>
+        <!-- <th scope="col">Nota</th> -->
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let student of students">
-        <td>{{student.student.cpf}}</td>
-        <td>{{student.student.name}}</td>
-        <td>{{student.school.name}}</td>
-        <td>{{student.fos}}</td>
-        <td>{{student.grades.grades}}</td>
+      <tr *ngFor="let schoolStudent of schoolStudents">
+        <ng-container *ngFor="let student of students">
+          <td *ngIf="schoolStudent.student_id == student.id">{{student.cpf}}</td>
+          <td *ngIf="schoolStudent.student_id == student.id">{{student.name}}</td>
+        </ng-container>
+        <ng-container *ngFor="let school of schools">
+          <td *ngIf="schoolStudent.school_id == school.id">{{school.name}}</td>
+        </ng-container>
+        <td>{{schoolStudent.fos}}</td>
+        <!-- <td>{{student.grades.grades}}</td> -->
       </tr>
     </tbody>
   </table>

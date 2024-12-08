@@ -1,5 +1,5 @@
-<div class="form-margin-gradely">
-  <form>
+<div class="form-margin-gradely" *ngIf="school">
+  <form (ngSubmit)="editSchool(school)">
     <div class="form-group">
       <label for="school-name">Nome da Instituição</label>
       <input class="form-control" type="text" id="school-name" placeholder="Nome" [(ngModel)]="school!.name" [ngModelOptions]="{standalone: true}">
@@ -20,7 +20,7 @@
         </select>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary btn-divider-gr" (click)="editSchool()" [routerLink]="['/registrations']" routerLinkActive="router-link-active" >Submit</button>
-    <button type="submit" class="btn btn-primary btn-divider-gr" (click)="deleteSchool()" [routerLink]="['/registrations']" routerLinkActive="router-link-active" >Delete</button>
+    <button type="submit" class="btn btn-primary btn-divider-gr">Submit</button>
+    <button type="submit" class="btn btn-primary btn-divider-gr" (click)="deleteSchool(school!.id)">Delete</button>
   </form>
 </div>

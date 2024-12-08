@@ -1,25 +1,29 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Student } from '../../../interfaces/student';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StudentService } from '../../../services/student/student.service';
 
 @Component({
   selector: 'app-add-student',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule],
   templateUrl: './add-student.component.html',
   styleUrl: './add-student.component.css'
 })
 export class AddStudentComponent {
-  protected student!: Student
-  constructor(private route: ActivatedRoute, private studentService: StudentService){}
+  students: Student[] = [];
+  newStudent: Student = { id: "", cpf: '', name: '', address: '', dateOfBirth: new Date() };
 
-  ngOnInit(): void {
-    this.student = this.studentService.createStudent()
-  }
+  constructor(private route: ActivatedRoute, private studentService: StudentService, private router: Router){}
 
-  addStudent() {
-    this.studentService.addStudent(this.student)
+  addStudent(): void {
+    this.newStudent.id = Math.floor(Math.random() * 1000000000).toString();
+    this.studentService.addStudent(this.newStudent).subscribe((student) => {
+      this.students.push(student);
+      this.newStudent = { id: "", cpf: '', name: '', address: '', dateOfBirth: new Date() };
+    });
+
+    this.router.navigate(['/usr/registrations'])
   }
 }

@@ -1,11 +1,9 @@
 import { Grades } from './grades';
-import { School } from "./school";
-import { Student } from "./student";
 
 export interface SchoolStudent{
   id: string;
-  school: School;
-  student: Student;
-  grades: Grades;
+  school_id: string;
+  student_id: string;
+  // grades: Grades;
   fos: string; //field of study
 }

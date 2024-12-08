@@ -1,5 +1,5 @@
-<div class="form-margin-gradely">
-  <form>
+<div class="form-margin-gradely"  *ngIf="student">
+  <form (ngSubmit)="editStudent(student)">
     <div class="form-group">
       <label for="student-name">Nome do Aluno</label>
       <input class="form-control" id="student-name" placeholder="Nome" [(ngModel)]="student!.name" [ngModelOptions]="{standalone: true}">
@@ -16,8 +16,8 @@
       <label for="dateOfBirth">Data de Nascimento</label>
       <input class="form-control" id="dateOfBirth" type="date" [(ngModel)]="student!.dateOfBirth"  [ngModelOptions]="{standalone: true}">
     </div>
-    <button type="submit" class="btn btn-primary btn-divider-gr" (click)="editStudent()" [routerLink]="['/registrations']" routerLinkActive="router-link-active" >Submit</button>
-    <button type="submit" class="btn btn-primary btn-divider-gr" (click)="deleteStudent()" [routerLink]="['/registrations']" routerLinkActive="router-link-active" >Delete</button>
-
+    <button type="submit" class="btn btn-primary btn-divider-gr">Submit</button>
+    <button type="button" class="btn btn-primary btn-divider-gr" (click)="deleteStudent(student!.id)">Delete</button>
   </form>
 </div>
+

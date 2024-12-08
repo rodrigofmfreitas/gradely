@@ -17,6 +17,12 @@ export class SelectSchoolComponent implements OnInit{
   constructor(private active: ActivatedRoute, private schoolService: SchoolService){}
 
   ngOnInit(): void {
-    this.schools = this.schoolService.getSchools()
+    this.loadchools();
+  }
+
+  loadchools(): void {
+    this.schoolService.getSchools().subscribe((schools) => {
+      this.schools = schools;
+    });
   }
 }

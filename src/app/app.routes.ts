@@ -37,6 +37,6 @@ export const routes: Routes = [
     { path: 'select/school/:id', component: EditSchoolComponent },
     ]
   },
-  { path: 'login', component: LoginComponent},
-  { path: '', component: LandingPageComponent}
+  { path: 'login', component: LoginComponent },
+  { path: '', component: LandingPageComponent }
 ];
