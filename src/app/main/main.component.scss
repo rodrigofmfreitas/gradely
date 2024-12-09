@@ -1,0 +1,19 @@
+
+main {
+  background-image: url('img/dashboard.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+
+app-navbar, app-sidebar {
+  z-index: 1;
+}
+
+.router-outlet {
+  margin-top: 20px;
+}

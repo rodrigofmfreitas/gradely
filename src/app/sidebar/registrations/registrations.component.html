@@ -1,35 +1,55 @@
-<div class="row">
-  <div class="col d-flex justify-content-center">
-    <h2>
-      <ul>
-        <li>
-          <a [routerLink]="['/usr/student/add']" routerLinkActive="router-link-active">Registrar Aluno</a>
-        </li>
-        <li>
-          <a [routerLink]="['/usr/select/student']" routerLinkActive="router-link-active" >Editar Registro de Aluno</a>
-        </li>
-      </ul>
-    </h2>
-  </div>
-  <div class="col d-flex justify-content-center">
-    <h2>
-      <ul>
-        <li>
-          <a [routerLink]="['/usr/school/add']" routerLinkActive="router-link-active">Registrar Escola</a>
-        </li>
-        <li>
-          <a [routerLink]="['/usr/select/school']" routerLinkActive="router-link-active">Editar Registro de Escola</a>
-        </li>
-      </ul>
-    </h2>
-  </div>
-</div>
-<div class="row">
-  <div class="d-flex justify-content-center">
-    <h2>
-      <a [routerLink]="['/usr/courses/add']" routerLinkActive="router-link-active" >Registrar Aluno em Disciplina</a>
-    </h2>
+
+<!-- </head> -->
+<body>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 d-flex justify-content-center">
+        <div class="link-box">
+          <i class="bi bi-person-plus-fill"></i>
+          <div class="section-header">
+            <ul>
+              <li>
+                <a [routerLink]="['/usr/student/add']" routerLinkActive="router-link-active" class="highlight-link">Registrar Aluno</a>
+              </li>
+              <li>
+                <a [routerLink]="['/usr/select/student']" routerLinkActive="router-link-active" class="highlight-link">Editar Registro de Aluno</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 d-flex justify-content-center">
+        <div class="link-box">
+          <i class="bi bi-building"></i>
+          <div class="section-header">
+            <ul>
+              <li>
+                <a [routerLink]="['/usr/school/add']" routerLinkActive="router-link-active" class="highlight-link">Registrar Escola</a>
+              </li>
+              <li>
+                <a [routerLink]="['/usr/select/school']" routerLinkActive="router-link-active" class="highlight-link">Editar Registro de Escola</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <div class="link-box">
+          <i class="bi bi-journal-text"></i>
+          <div class="section-header">
+            <a [routerLink]="['/usr/courses/add']" routerLinkActive="router-link-active" class="highlight-link">
+              Registrar Aluno em Disciplina
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-</div>
-
+</body>
+<!-- </html> -->
