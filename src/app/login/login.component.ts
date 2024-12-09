@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
   protected accounts: Account[] = []
   protected account: Account = {id: "", name: "", email: "", password: ""}
   protected nAccount?: Account
-
+  username = ""
+  password = ""
   constructor(
     private accountService: AccountService,
     private router: Router
@@ -40,5 +41,9 @@ export class LoginComponent implements OnInit {
     this.accountService.getAccountByEmail(this.account.email).subscribe((account) => {
 
     })
+  }
+
+  onLogin(): void {
+
   }
 }
