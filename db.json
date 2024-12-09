@@ -67,6 +67,18 @@
       "school_id": "2",
       "student_id": "867219434",
       "fos": "Web"
+    },
+    {
+      "id": "558497194",
+      "school_id": "Universidade Braz Cubas",
+      "student_id": "1",
+      "fos": "Web"
+    },
+    {
+      "id": "426247660",
+      "school_id": "Universidade Comunitária da Região de Chapecó - Unochapecó",
+      "student_id": "1",
+      "fos": "Web"
     }
   ]
 }

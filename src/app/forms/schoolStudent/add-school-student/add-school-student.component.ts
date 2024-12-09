@@ -1,3 +1,4 @@
+import { UniversityService } from './../../../services/university/university.service';
 import { SchoolService } from './../../../services/school/school.service';
 import { SchoolStudentService } from './../../../services/school-student/school-student.service';
 import { Student } from './../../../interfaces/student';
@@ -8,6 +9,7 @@ import { StudentService } from '../../../services/student/student.service';
 import { School } from '../../../interfaces/school';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { University } from '../../../interfaces/university';
 
 @Component({
   selector: 'app-add-school-student',
@@ -20,6 +22,7 @@ export class AddSchoolStudentComponent {
   students: Student[] = [];
   schools: School[] = [];
   schoolStudents: SchoolStudent[] = []
+  universities: University[] = [];
   newSchoolStudent: SchoolStudent = {
     id: "",
     school_id: "",
@@ -32,6 +35,7 @@ export class AddSchoolStudentComponent {
     private schoolStudentService: SchoolStudentService,
     private studentService: StudentService,
     private schoolService: SchoolService,
+    private universityService: UniversityService,
     private router: Router
   ) {}
 
@@ -39,6 +43,7 @@ export class AddSchoolStudentComponent {
     this.loadSchoolStudents();
     this.loadSchool();
     this.loadStudents();
+    this.loadUniversities();
   }
 
   loadSchoolStudents(): void {
@@ -46,15 +51,28 @@ export class AddSchoolStudentComponent {
       this.schoolStudents = schoolStudents;
     });
   }
+
   loadStudents(): void {
     this.studentService.getStudents().subscribe((students) => {
       this.students = students;
     });
   }
+
   loadSchool(): void {
     this.schoolService.getSchools().subscribe((schools) => {
       this.schools = schools;
     });
+  }
+
+  loadUniversities(): void {
+    this.universityService.getUniversities().subscribe(
+      (data) => {
+        this.universities = data;
+      },
+      (error) => {
+        console.error('Error fetching universities', error);
+      }
+    );
   }
 
   addSchoolStudent(): void {

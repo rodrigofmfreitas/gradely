@@ -16,9 +16,10 @@
           <td *ngIf="schoolStudent.student_id == student.id">{{student.cpf}}</td>
           <td *ngIf="schoolStudent.student_id == student.id">{{student.name}}</td>
         </ng-container>
-        <ng-container *ngFor="let school of schools">
+        <td>{{schoolStudent.school_id}}</td>
+        <!-- <ng-container *ngFor="let school of schools">
           <td *ngIf="schoolStudent.school_id == school.id">{{school.name}}</td>
-        </ng-container>
+        </ng-container> -->
         <td>{{schoolStudent.fos}}</td>
         <!-- <td>{{student.grades.grades}}</td> -->
       </tr>

@@ -1,10 +1,11 @@
 <h1>Adicionar Aluno em Disciplina</h1>
+<div *ngIf="universities.length === 0">Loading universities...</div>
 <form (ngSubmit)="addSchoolStudent()">
   <div class="row">
     <div class="col">
       <label for="school">Instituição de Ensino</label>
       <select class="form-control form-control-lg" [(ngModel)]="newSchoolStudent.school_id" [ngModelOptions]="{standalone: true}">
-        <option *ngFor="let school of schools" [ngValue]="school.id">{{school.name}}</option>
+        <option *ngFor="let university of universities" [ngValue]="university.name">{{university.name}}</option>
       </select>
     </div>
     <div class="col">
