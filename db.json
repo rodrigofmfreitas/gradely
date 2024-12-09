@@ -80,5 +80,19 @@
       "student_id": "1",
       "fos": "Web"
     }
+  ],
+  "accounts": [
+    {
+      "id": "1",
+      "name": "teste",
+      "email": "teste@gmail.com",
+      "password": "admin"
+    },
+    {
+      "id": "256384210",
+      "name": "",
+      "email": "",
+      "password": ""
+    }
   ]
 }

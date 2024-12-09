@@ -13,6 +13,7 @@ import { SelectSchoolComponent } from './registrations/selectable/select-school/
 import { EditStudentComponent } from './forms/student/edit-student/edit-student.component';
 import { EditSchoolComponent } from './forms/school/edit-school/edit-school.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ContaComponent } from './conta/conta.component';
 
 export const routes: Routes = [
 
@@ -38,5 +39,6 @@ export const routes: Routes = [
     ]
   },
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: ContaComponent },
   { path: '', component: LandingPageComponent }
 ];
