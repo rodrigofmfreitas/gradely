@@ -32,7 +32,7 @@ html, body {
 }
 
 .nav-link {
-  color: #e3e3e3 !important;
+  color: #a69e9d !important;
   margin-right: 20px;
 }
 
@@ -169,7 +169,7 @@ section {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   line-height: 25px;
-  color: #EEEEEE;
+  color: #a69e9d;
   width: 770px;
   height: 91px;
   position: absolute;
@@ -366,6 +366,7 @@ section {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
+    box-shadow: 80px;
 
     .central-logo {
       max-width: 200px;
