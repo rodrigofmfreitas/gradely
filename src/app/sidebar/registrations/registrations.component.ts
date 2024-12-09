@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './registrations.component.html',
-  styleUrl: './registrations.component.css'
+  styleUrl: './registrations.component.scss'
 })
 export class RegistrationsComponent {
 
