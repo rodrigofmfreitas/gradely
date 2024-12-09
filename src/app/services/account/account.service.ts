@@ -19,6 +19,10 @@ export class AccountService {
     return this.http.get<Account>(`${this.url}/${id}`)
   }
 
+  getAccountByEmail(email: string): Observable<Account> {
+    return this.http.get<Account>(`${this.url}/search?country=${email}`)
+  }
+
   addAccount(account: Account): Observable<Account> {
     return this.http.post<Account>(this.url, account, {
       headers: new HttpHeaders({
